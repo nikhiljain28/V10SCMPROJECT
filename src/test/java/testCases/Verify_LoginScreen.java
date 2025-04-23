@@ -11,13 +11,9 @@ import org.testng.annotations.Test;
 import java.io.FileNotFoundException;
 import java.time.Duration;
 
-public class VerifyLoginScreenTestCases {
+public class Verify_LoginScreen {
 
     WebDriver driver;
-
-    public VerifyLoginScreenTestCases(WebDriver driver) {
-        this.driver = driver;
-    }
 
     @BeforeMethod
     public void setUp() throws FileNotFoundException {
@@ -29,10 +25,16 @@ public class VerifyLoginScreenTestCases {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
-    @Test
+    @Test(enabled = true)
     public void verifyLoginWithValidCredentials() throws FileNotFoundException {
         LoginPage lp = new LoginPage(driver);
-        lp.loginFunctionality();
+        lp.validCredentialsLogin();
+    }
+
+    @Test(enabled = false)
+    public void verifyLoginWithInvalidCredentials() throws FileNotFoundException {
+        LoginPage lp = new LoginPage(driver);
+        lp.invalidCredentialsLogin();
     }
 
     @AfterMethod

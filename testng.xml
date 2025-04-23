@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Sanity Pack">
+    <test verbose="2" preserve-order="true" name="/Users/nikhiljain/AutomationProject/V10SCP">
+        <classes>
+            <class name="testCases.Verify_Dashboard">
+                <methods>
+                    <include name="verifyLoginWithValidCredentials"/>
+                </methods>
+            </class>
+            <class name="testCases.Verify_LoginScreen">
+                <methods>
+                    <include name="verifyLoginWithValidCredentials"/>
+                    <include name="verifyLoginWithInvalidCredentials"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

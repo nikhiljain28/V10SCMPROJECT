@@ -1,7 +1,4 @@
 package Utilites;
-
-import org.openqa.selenium.devtools.v85.io.IO;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -64,6 +61,17 @@ public class PropertyFileReader {
             FileInputStream fis = new FileInputStream("/Users/nikhiljain/AutomationProject/V10SCP/src/test/resources/datafile.properties");
             file.load(fis);
             String value = file.getProperty("URL");
+            return value;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public String getInvalidUsernameMessage() throws FileNotFoundException {
+        Properties file = new Properties();
+        try{
+            FileInputStream fis = new FileInputStream("/Users/nikhiljain/AutomationProject/V10SCP/src/test/resources/datafile.properties");
+            file.load(fis);
+            String value = file.getProperty("InvalidUsernameAndPassword");
             return value;
         } catch (IOException e) {
             throw new RuntimeException(e);
