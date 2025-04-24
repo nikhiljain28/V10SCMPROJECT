@@ -77,4 +77,38 @@ public class PropertyFileReader {
             throw new RuntimeException(e);
         }
     }
+
+    public String getCSPUsername() throws FileNotFoundException {
+        Properties file = new Properties();
+        try{
+            FileInputStream fis = new FileInputStream("/Users/nikhiljain/AutomationProject/V10SCP/src/test/resources/datafile.properties");
+            file.load(fis);
+            return file.getProperty("CSP_Username");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public String getCSPPassword() throws FileNotFoundException {
+        Properties file = new Properties();
+        try{
+            FileInputStream fis = new  FileInputStream("/Users/nikhiljain/AutomationProject/V10SCP/src/test/resources/datafile.properties");
+            file.load(fis);
+            return file.getProperty("CSP_Password");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public String getCSPURL() throws FileNotFoundException {
+        Properties file = new Properties();
+        try{
+            FileInputStream fis = new FileInputStream("/Users/nikhiljain/AutomationProject/V10SCP/src/test/resources/datafile.properties");
+            file.load(fis);
+            String value = file.getProperty("CSP_URL");
+            return value;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

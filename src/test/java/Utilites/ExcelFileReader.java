@@ -44,9 +44,11 @@ public class ExcelFileReader {
         int lastRowNum = sheet.getLastRowNum();
         for (int i = 1; i <= lastRowNum; i++) {
             Row row = sheet.getRow(i);
-
+            return row.getCell(0).getStringCellValue();
         }
+        return null;
     }
+
     public ArrayList<String> readFile(String filename, String sheetName) throws IOException {
         fis = new FileInputStream(filename);
         workbook = new XSSFWorkbook(fis);
